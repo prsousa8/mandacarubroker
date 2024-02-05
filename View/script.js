@@ -162,7 +162,7 @@ async function getAPI(url) {
 function hideLoader() {
     document.getElementById("loading").style.display = "none";
 }
-// Hello
+
 
 function showAll(tasks) {
     let tab = `<thead>
