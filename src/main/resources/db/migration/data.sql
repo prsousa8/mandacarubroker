@@ -1,0 +1,1 @@
+INSERT IGNORE INTO stock(symbol,company_name,price) VALUES ('AA3','B3',45.6);

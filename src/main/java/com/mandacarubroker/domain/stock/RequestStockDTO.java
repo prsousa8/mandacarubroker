@@ -12,4 +12,5 @@ public record RequestStockDTO(
         @NotNull(message = "Price cannot be null")
         double price
 ) {
+        
 }
