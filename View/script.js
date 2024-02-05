@@ -1,8 +1,30 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const fetchDataAllButton = document.getElementById("fetchDataAllButton");
     const fetchDataButton = document.getElementById("fetchDataButton");
     const createTaskButton = document.getElementById("createTaskButton");
     const updateTaskButton = document.getElementById("updateTaskButton");
     const deleteTaskButton = document.getElementById("deleteTaskButton");
+
+    fetchDataAllButton.addEventListener("click", async function fetchData() {
+        
+        const url = `http://localhost:8080/stocks`;
+
+        try {
+            const response = await fetch(url, { method: "GET" });
+            const data = await response.json();
+            
+            if (response.ok) {
+                hideLoader();
+                showAll(data);
+            } else {
+                console.error("Erro ao buscar dados da API:", data.error);
+                alert("Erro ao buscar dados da API. Por favor, tente novamente mais tarde.");
+            }
+        } catch (error) {
+            console.error("Erro ao buscar dados da API:", error.message);
+            alert("Erro ao buscar dados da API. Por favor, tente novamente mais tarde.");
+        }
+    });    
 
     fetchDataButton.addEventListener("click", async function fetchData() {
         const userIdInput = document.getElementById("Id").value;
@@ -18,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
             const response = await fetch(url, { method: "GET" });
             const data = await response.json();
-
+            
             if (response.ok) {
                 hideLoader();
                 show(data);
@@ -141,7 +163,31 @@ function hideLoader() {
     document.getElementById("loading").style.display = "none";
 }
 
-function show(task) {
+
+function showAll(tasks) {
+    let tab = `<thead>
+            <th scope="col">ID</th>
+            <th scope="col">Company Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Symbol</th>
+        </thead>`;
+    tasks.forEach(task => {
+        tab += `
+                <tr>
+                    <td scope="row">${task.id}</td>
+                    <td>${task.symbol}</td>
+                    <td>${task.companyName}</td>
+                    <td>${task.price}</td>
+                </tr>
+            `;
+    });
+        
+    const tasksTable = document.getElementById("stocks");
+    tasksTable.innerHTML = tab;
+    tasksTable.style.display = "table"; // Torna a tabela visível
+}
+
+function show(tasks) {
     let tab = `<thead>
             <th scope="col">ID</th>
             <th scope="col">Company Name</th>
@@ -151,14 +197,14 @@ function show(task) {
     
         tab += `
                 <tr>
-                    <td scope="row">${task.id}</td>
-                    <td>${task.symbol}</td>
-                    <td>${task.companyName}</td>
-                    <td>${task.price}</td>
+                    <td scope="row">${tasks.id}</td>
+                    <td>${tasks.symbol}</td>
+                    <td>${tasks.companyName}</td>
+                    <td>${tasks.price}</td>
                 </tr>
             `;
     
-    
+        
     const tasksTable = document.getElementById("stocks");
     tasksTable.innerHTML = tab;
     tasksTable.style.display = "table"; // Torna a tabela visível
