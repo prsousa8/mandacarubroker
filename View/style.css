@@ -29,6 +29,10 @@ a{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+a:hover{
+    color: #005B41;
+}
+
 h1 {
     margin-bottom: 2%;
     color: #008170;
@@ -42,6 +46,14 @@ main {
     border-radius: 16px;
     text-align: center;
     width: 350px;
+    background-color: #232D3F;
+    border: 2px solid #232D3F;
+    color: white;
+}
+
+#Id:hover{
+    background-color: #445069;
+    border-color: #445069;
 }
 
 .principal__buttons {
@@ -61,6 +73,11 @@ main {
     border-radius: 16px;
     width: 10%;
     background-color: #008170;
+}
+
+.buttonCRUD:hover{
+    background-color: #005B41;
+    border-color: #005B41;
 }
 
 .principal__table {
