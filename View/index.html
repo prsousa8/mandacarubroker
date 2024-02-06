@@ -6,31 +6,38 @@
     <title>Mandacaru Broker</title>
     <script src="script.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div class="d-flex justify-content-center">
         <div class="spiner-border" role="status" id="loading">
+          
         </div>
     </div>
 
+    <main class="principal">
+      <section class="principal__buttons">
+        <button class="buttonCRUD" id="fetchDataAllButton">Read All Stocks</button>
+
+        <label for="Id">ID:</label>
+        <input type="text" id="Id" placeholder="Enter ID">
+        
+        
+        <button class="buttonCRUD" id="fetchDataButton">Read Stock</button>
+        <button class="buttonCRUD" id="createTaskButton">Create Stock</button>
+        <button class="buttonCRUD" id="updateTaskButton">Update Stock</button>
+        <button class="buttonCRUD" id="deleteTaskButton">Delete Stock</button>
+      </section>
+
+      <section class="principal__table">
+        <h1>Stocks</h1>
+
+        <table class="table table-hover">
+            <tbody id="stocks"></tbody>
+        </table>
+      </section>
+    </main>
    
-    <label for="Id">ID:</label>
-    <input type="text" id="Id" placeholder="Enter ID">
-    
-
-    <button id="fetchDataAllButton">Read All Stocks</button>
-    <button id="fetchDataButton">Read Stock</button>
-    <button id="createTaskButton">Create Stock</button>
-    <button id="updateTaskButton">Update Stock</button>
-    <button id="deleteTaskButton">Delete Stock</button>
-
-    
-
-    <p class="h1 text-center">Stocks</p>
-
-    <table class="table table-hover">
-        <tbody id="stocks"></tbody>
-    </table>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>

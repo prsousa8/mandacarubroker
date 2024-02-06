@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    margin-bottom: 2%;
+    color: #008170;
+}
+
+main {
+    margin: 5% 0% 0% 5%;
+}
+
+.principal__buttons {
+    display: flex;
+    text-align: center;
+    font-size: 0.9rem;
+    color: white;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.buttonCRUD {
+    border: 2px solid #008170;
+    color: aliceblue;
+    border-radius: 16px;
+    width: 10%;
+    background-color: #008170;
+}
+
+.principal__table {
+    margin-top: 5%;
+}
