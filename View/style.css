@@ -3,10 +3,30 @@
     padding: 0;
 }
 
+
 body {
     box-sizing: border-box;
     background-color: black;
     color: white;
+}
+
+header {
+    padding-block: 2%;
+    background-color: #232D3F;
+}
+
+.cabecalho__itens{
+    margin-left: 5%;
+}
+
+a{
+    display: inline;
+    color: #008170;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding-inline-end: 50px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
@@ -16,6 +36,12 @@ h1 {
 
 main {
     margin: 5% 0% 0% 5%;
+}
+
+#Id{
+    border-radius: 16px;
+    text-align: center;
+    width: 350px;
 }
 
 .principal__buttons {
