@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const updateTaskButton = document.getElementById("updateTaskButton");
     const deleteTaskButton = document.getElementById("deleteTaskButton");
 
+    // Função para ler todas as stocks
     fetchDataAllButton.addEventListener("click", async function fetchData() {
         
         const url = `http://localhost:8080/stocks`;
@@ -26,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });    
 
+    // Função para exibir uma stock
     fetchDataButton.addEventListener("click", async function fetchData() {
         const userIdInput = document.getElementById("Id").value;
         
@@ -81,10 +83,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 body: JSON.stringify(data)
             });
 
-            alert("Tarefa criada com sucesso!");
+            alert("Stock criada com sucesso!");
         } catch (error) {
-            console.error("Erro ao criar a tarefa:", error.message);
-            alert("Erro ao criar a tarefa. Por favor, tente novamente mais tarde.");
+            console.error("Erro ao criar a stock:", error.message);
+            alert("Erro ao criar a stock. Por favor, tente novamente mais tarde.");
         }
     });
 
@@ -116,10 +118,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 body: JSON.stringify(data)
             });
 
-            alert("Tarefa atualizada com sucesso!");
+            alert("Stock atualizada com sucesso!");
         } catch (error) {
-            console.error("Erro ao atualizar a tarefa:", error.message);
-            alert("Erro ao atualizar a tarefa. Por favor, tente novamente mais tarde.");
+            console.error("Erro ao atualizar a stock:", error.message);
+            alert("Erro ao atualizar a stock. Por favor, tente novamente mais tarde.");
         }
     });
 
@@ -128,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const Id = document.getElementById("Id").value;
 
         if (!Id) {
-            alert("Por favor, insira o ID da tarefa a ser excluída.");
+            alert("Por favor, insira o ID da stock a ser excluída.");
             return;
         }
 
@@ -139,10 +141,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 method: "DELETE"
             });
 
-            alert("Tarefa excluída com sucesso!");
+            alert("Stock excluída com sucesso!");
         } catch (error) {
-            console.error("Erro ao excluir a tarefa:", error.message);
-            alert("Erro ao excluir a tarefa. Por favor, tente novamente mais tarde.");
+            console.error("Erro ao excluir a stock:", error.message);
+            alert("Erro ao excluir a stock. Por favor, tente novamente mais tarde.");
         }
     });
 });
