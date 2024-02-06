@@ -149,16 +149,6 @@ document.addEventListener("DOMContentLoaded", function () {
    
 
 
-async function getAPI(url) {
-    const response = await fetch(url, { method: "GET" });
-
-    if (!response.ok) {
-        throw new Error(`Erro na resposta da API: ${response.status} - ${response.statusText}`);
-    }
-
-    return await response.json();
-}
-
 function hideLoader() {
     document.getElementById("loading").style.display = "none";
 }
