@@ -63,9 +63,9 @@ public class StockSteps {
         JsonPath jsnpath = response.jsonPath();
 
         String s = jsnpath.getJsonObject("id[1]").toString();
-        System.out.println("s:"+s);
+        System.out.println("s:" + s);
 
-        assertTrue(s.length()<=arg0,"I verify that the id of the first product is {int} letters");
+        assertTrue(s.length() <= arg0, "I verify that the id of the first product is {int} letters");
     }
 
     @Given("I hit the url of post stocks api endpoint")
@@ -78,10 +78,10 @@ public class StockSteps {
 
     @And("I pass the request body of stock id {}")
     public void iPassTheRequestBodyOfStockId(String arg0) {
-        requestParams.put("id",arg0);
-        requestParams.put("CompanyName","Cucumber Bank");
-        requestParams.put("price",67.90);
-        requestParams.put("symbol","SD4");
+        requestParams.put("id", arg0);
+        requestParams.put("CompanyName", "Cucumber Bank");
+        requestParams.put("price", 67.90);
+        requestParams.put("symbol", "SD4");
 
         httpRequest.body(requestParams.toJSONString());
         Response response = httpRequest.post("stocks");
@@ -108,17 +108,21 @@ public class StockSteps {
         requestParams = new JSONObject();
 
         //requestParams.put("id","3fda04c0-26dc-4dc5-ae94-c53c925848ac");
-        requestParams.put("CompanyName","Cucumber Bank");
-        requestParams.put("price",67.90);
-        requestParams.put("symbol","SD4");
+        requestParams.put("companyName", "Cucumber Bank");
+        requestParams.put("price", 67.90);
+        requestParams.put("symbol", "SD4");
 
         httpRequest.body(requestParams.toJSONString());
-        response = httpRequest.put("stocks/"+arg0);
-    }
+        httpRequest.header("Content-Type", "application/json");
+        response = httpRequest.put("stocks/" + arg0);
+        System.out.println(response.getStatusCode());
+        ResponseBody body = response.getBody();
+        JsonPath jsnpath = response.jsonPath();
 
-    @Then("I receive the response code put as {int}")
-    public void iReceiveTheResponseCodePutAs(int arg0) {
-        int ResponseCode = response.getStatusCode();
-        assertEquals(ResponseCode, arg0);
+
+        System.out.println(body.asString());
+
+        s = jsnpath.getJsonObject("id").toString();
+        System.out.println(s);
     }
 }

@@ -159,9 +159,9 @@ function hideLoader() {
 function showAll(tasks) {
     let tab = `<thead>
             <th scope="col">ID</th>
+            <th scope="col">Symbol</th>
             <th scope="col">Company Name</th>
             <th scope="col">Price</th>
-            <th scope="col">Symbol</th>
         </thead>`;
     tasks.forEach(task => {
         tab += `
@@ -182,9 +182,9 @@ function showAll(tasks) {
 function show(tasks) {
     let tab = `<thead>
             <th scope="col">ID</th>
+            <th scope="col">Symbol</th>
             <th scope="col">Company Name</th>
             <th scope="col">Price</th>
-            <th scope="col">Symbol</th>
         </thead>`;
     
         tab += `
