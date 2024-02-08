@@ -125,4 +125,16 @@ public class StockSteps {
         s = jsnpath.getJsonObject("id").toString();
         System.out.println(s);
     }
+
+    @Given("I hit the url of delete stocks api endpoint")
+    public void iHitTheUrlOfDeleteStocksApiEndpoint() {
+        RestAssured.baseURI = "http://localhost:8080/";
+    }
+
+    @When("I pass the url in the request delete with {}")
+    public void iPassTheUrlInTheRequestDeleteWith(String arg0) {
+        httpRequest = RestAssured.given();
+        response = httpRequest.delete("stocks/" + arg0);
+        System.out.println(response.getStatusCode());
+    }
 }

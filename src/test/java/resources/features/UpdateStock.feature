@@ -4,5 +4,5 @@ Feature: update stocks using PUT API
     When I pass the url in the request with <StockID>
     Then I receive the response code as 200
     Examples:
-      | StockID      |
-      | 3fda04c0-26dc-4dc5-ae94-c53c925848ac |
+      | StockID    |
+      | hdghsdghsd |
