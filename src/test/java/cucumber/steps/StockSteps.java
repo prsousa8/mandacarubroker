@@ -32,6 +32,8 @@ public class StockSteps {
     public ResponseBody body;
     public JSONObject requestParams;
 
+    public String s;
+
     @Given("I hit the url of get stocks api endpoint")
     public void iHitTheUrlOfGetStocksApiEndpoint() {
         RestAssured.baseURI = "http://localhost:8080/";
@@ -83,7 +85,7 @@ public class StockSteps {
 
         httpRequest.body(requestParams.toJSONString());
         Response response = httpRequest.post("stocks");
-        ResponseBody body = response.getBody();
+        body = response.getBody();
         JsonPath jsnpath = response.jsonPath();
 
 
@@ -93,5 +95,30 @@ public class StockSteps {
 
     @Then("I receive the response body with symbol as {}")
     public void iReceiveTheResponseBodyWithSymbolAs(String arg0) {
+    }
+
+    @Given("I hit the url of put stocks api endpoint")
+    public void iHitTheUrlOfPutStocksApiEndpoint() {
+        RestAssured.baseURI = "http://localhost:8080/";
+    }
+
+    @When("I pass the url in the request with {}")
+    public void iPassTheUrlInTheRequestWith(String arg0) {
+        httpRequest = RestAssured.given();
+        requestParams = new JSONObject();
+
+        //requestParams.put("id","3fda04c0-26dc-4dc5-ae94-c53c925848ac");
+        requestParams.put("CompanyName","Cucumber Bank");
+        requestParams.put("price",67.90);
+        requestParams.put("symbol","SD4");
+
+        httpRequest.body(requestParams.toJSONString());
+        response = httpRequest.put("stocks/"+arg0);
+    }
+
+    @Then("I receive the response code put as {int}")
+    public void iReceiveTheResponseCodePutAs(int arg0) {
+        int ResponseCode = response.getStatusCode();
+        assertEquals(ResponseCode, arg0);
     }
 }
