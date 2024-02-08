@@ -1,0 +1,19 @@
+{
+  "name": "mandacarubroker",
+  "version": "1.0.0",
+  "description": "A Mandacaru Broker API é uma aplicação Spring Boot que fornece operações CRUD (Create, Read, Update, Delete) para gerenciar informações sobre ações (stocks).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prsousa8/mandacarubroker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prsousa8/mandacarubroker/issues"
+  },
+  "homepage": "https://github.com/prsousa8/mandacarubroker#readme"
+}
