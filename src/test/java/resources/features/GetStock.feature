@@ -13,3 +13,4 @@ Feature: Get all stocks
       Given I hit the url of get stocks api endpoint
       When I pass the url in the request
       Then I verify that the id of the first product is 36 letters
+
