@@ -7,12 +7,12 @@ import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
 @RequestMapping("/stocks")
 public class StockController {
-
     private final StockService stockService;
 
     public StockController(StockService stockService) {
@@ -36,8 +36,8 @@ public class StockController {
     }
 
     @PutMapping("/{id}")
-    public Stock updateStock(@PathVariable String id, @RequestBody Stock updatedStock) {
-        return stockService.updateStock(id, updatedStock).orElse(null);
+    public Optional<Stock> updateStock(@PathVariable String id, @RequestBody Stock updatedStock) {
+        return stockService.updateStock(id, updatedStock);
     }
 
     @DeleteMapping("/{id}")
