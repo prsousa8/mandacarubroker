@@ -26,7 +26,7 @@ public class StockController {
 
     @GetMapping("/{id}")
     public Stock getStockById(@PathVariable String id) {
-        return stockService.getStockById(id).orElse(null);
+        return stockService.getStockById(id);
     }
 
     @PostMapping

@@ -3,6 +3,7 @@ package com.mandacarubroker.service;
 import com.mandacarubroker.domain.stock.RequestStockDTO;
 import com.mandacarubroker.domain.stock.Stock;
 import com.mandacarubroker.domain.stock.StockRepository;
+import com.mandacarubroker.service.exceptions.ObjectNotFoundException;
 import jakarta.validation.*;
 import org.springframework.stereotype.Service;
 
@@ -24,8 +25,8 @@ public class StockService {
         return stockRepository.findAll();
     }
 
-    public Optional<Stock> getStockById(String id) {
-        return stockRepository.findById(id);
+    public Stock getStockById(String id) {
+        return stockRepository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
     }
 
     public Stock createStock(RequestStockDTO data) {
