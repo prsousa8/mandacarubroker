@@ -5,6 +5,7 @@ import com.mandacarubroker.domain.stock.Stock;
 import com.mandacarubroker.domain.stock.StockRepository;
 import com.mandacarubroker.service.exceptions.ObjectNotFoundException;
 import jakarta.validation.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,7 +15,7 @@ import java.util.Set;
 @Service
 public class StockService {
 
-
+    @Autowired
     private final StockRepository stockRepository;
 
     public StockService(StockRepository stockRepository) {
