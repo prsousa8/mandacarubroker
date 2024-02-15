@@ -45,26 +45,14 @@ public class Stock {
 
     public double changePrice(double amount, boolean increase) {
         if (increase) {
-            if (amount < this.price) {
-                return increasePrice(amount);
-            } else {
-                return decreasePrice(amount);
-            }
+            return this.price + amount; // Aumenta o preço adicionando o valor fornecido
         } else {
             if (amount > this.price) {
-                return increasePrice(amount);
+                return 0; // Impede que o preço fique negativo durante uma diminuição
             } else {
-                return this.decreasePrice(amount);
+                return this.price - amount; // Diminui o preço subtraindo o valor fornecido
             }
         }
-    }
-
-    public double increasePrice(double amount) {
-        return this.price + amount;
-    }
-
-    public double decreasePrice(double amount) {
-        return this.price - amount;
     }
 
 }
