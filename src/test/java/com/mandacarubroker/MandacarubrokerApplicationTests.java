@@ -7,7 +7,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 class MandacarubrokerApplicationTests {
 
 	@Test
-	void contextLoads() {
+	void main() {
+		MandacarubrokerApplication.main(new String[]{});
 	}
 
 }
