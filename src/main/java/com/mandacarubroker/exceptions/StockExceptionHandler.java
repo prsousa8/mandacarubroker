@@ -3,7 +3,6 @@ package com.mandacarubroker.exceptions;
 import com.mandacarubroker.service.exceptions.CampoNuloException;
 import com.mandacarubroker.service.exceptions.CampoVazioException;
 import com.mandacarubroker.service.exceptions.ObjectNotFoundException;
-import com.mandacarubroker.service.exceptions.RegistroNaoEncontradoException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
