@@ -101,7 +101,7 @@ class StockServiceTest {
         assertEquals("generatedID", createdStock.getId()); // Certifique-se de ajustar conforme a lógica real
         assertEquals("CB2", createdStock.getSymbol());
         assertEquals("New Company", createdStock.getCompanyName());
-        assertEquals(-25.0, createdStock.getPrice());
+        assertEquals(25.0, createdStock.getPrice());
 
 
     }
