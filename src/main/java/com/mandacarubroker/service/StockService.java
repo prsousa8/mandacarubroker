@@ -6,9 +6,7 @@ import com.mandacarubroker.domain.stock.StockRepository;
 import com.mandacarubroker.service.exceptions.CampoNuloException;
 import com.mandacarubroker.service.exceptions.CampoVazioException;
 import com.mandacarubroker.service.exceptions.ObjectNotFoundException;
-import com.mandacarubroker.service.exceptions.RegistroNaoEncontradoException;
 import jakarta.validation.*;
-import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
